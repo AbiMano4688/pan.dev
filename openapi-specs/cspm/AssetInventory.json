@@ -617,7 +617,7 @@
           "operator": {
             "description": "Operator",
             "enum": [
-              "="
+              "tag:yaml.org,2002:value ="
             ],
             "type": "string"
           },
@@ -716,11 +716,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/v2/inventory/suggest\"\n\npayload = {\n    \"filterName\": \"string\",\n    \"query\": \"string\"\n}\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/v2/inventory/suggest\"\n\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/filter/v2/inventory/suggest \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"filterName\":\"string\",\"query\":\"string\"}'"
+            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/filter/v2/inventory/suggest \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
           }
         ]
       }
@@ -802,11 +802,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"=\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory\"\n\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/filter/inventory \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"=\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
+            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/filter/inventory \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
           }
         ]
       }
@@ -853,11 +853,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/{id}\"\n\nheaders = {\"x-redlock-auth\": \"REPLACE_KEY_VALUE\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/%7Bid%7D\"\n\nheaders = {\"x-redlock-auth\": \"REPLACE_KEY_VALUE\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request GET \\\n  --url https://api.prismacloud.io/filter/inventory/{id} \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
+            "source": "curl --request GET \\\n  --url https://api.prismacloud.io/filter/inventory/%7Bid%7D \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
           }
         ]
       },
@@ -907,11 +907,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/{id}\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"=\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"PUT\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/%7Bid%7D\"\n\nheaders = {\n    \"content-type\": \"application/json; charset=UTF-8\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"PUT\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request PUT \\\n  --url https://api.prismacloud.io/filter/inventory/{id} \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"=\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
+            "source": "curl --request PUT \\\n  --url https://api.prismacloud.io/filter/inventory/%7Bid%7D \\\n  --header 'content-type: application/json; charset=UTF-8' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
           }
         ]
       },
@@ -955,11 +955,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/{id}\"\n\nheaders = {\"x-redlock-auth\": \"REPLACE_KEY_VALUE\"}\n\nresponse = requests.request(\"DELETE\", url, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/filter/inventory/%7Bid%7D\"\n\nheaders = {\"x-redlock-auth\": \"REPLACE_KEY_VALUE\"}\n\nresponse = requests.request(\"DELETE\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request DELETE \\\n  --url https://api.prismacloud.io/filter/inventory/{id} \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
+            "source": "curl --request DELETE \\\n  --url https://api.prismacloud.io/filter/inventory/%7Bid%7D \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE'"
           }
         ]
       }
@@ -1204,11 +1204,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/v2/inventory\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"=\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/v2/inventory\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"tag:yaml.org,2002:value =\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/v2/inventory \\\n  --header 'content-type: application/json' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"=\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
+            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/v2/inventory \\\n  --header 'content-type: application/json' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"tag:yaml.org,2002:value =\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
           }
         ]
       }
@@ -1454,11 +1454,11 @@
         "x-codeSamples": [
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://api.prismacloud.io/v2/inventory/trend\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"=\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://api.prismacloud.io/v2/inventory/trend\"\n\npayload = {\n    \"detailed\": True,\n    \"fields\": [\"string\"],\n    \"filters\": [\n        {\n            \"name\": \"string\",\n            \"operator\": \"tag:yaml.org,2002:value =\",\n            \"value\": \"string\"\n        }\n    ],\n    \"groupBy\": [\"string\"],\n    \"limit\": 0,\n    \"offset\": 0,\n    \"pageToken\": \"string\",\n    \"sortBy\": [\"string\"],\n    \"timeRange\": {\n        \"type\": \"relative\",\n        \"relativeTimeType\": \"BACKWARD\",\n        \"value\": {\n            \"amount\": 0,\n            \"unit\": \"minute\"\n        }\n    }\n}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"x-redlock-auth\": \"REPLACE_KEY_VALUE\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Shell + Curl",
-            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/v2/inventory/trend \\\n  --header 'content-type: application/json' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"=\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
+            "source": "curl --request POST \\\n  --url https://api.prismacloud.io/v2/inventory/trend \\\n  --header 'content-type: application/json' \\\n  --header 'x-redlock-auth: REPLACE_KEY_VALUE' \\\n  --data '{\"detailed\":true,\"fields\":[\"string\"],\"filters\":[{\"name\":\"string\",\"operator\":\"tag:yaml.org,2002:value =\",\"value\":\"string\"}],\"groupBy\":[\"string\"],\"limit\":0,\"offset\":0,\"pageToken\":\"string\",\"sortBy\":[\"string\"],\"timeRange\":{\"type\":\"relative\",\"relativeTimeType\":\"BACKWARD\",\"value\":{\"amount\":0,\"unit\":\"minute\"}}}'"
           }
         ]
       }
